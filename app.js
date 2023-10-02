@@ -10,8 +10,13 @@ runEventListeners();
 
 function runEventListeners() {
     form.addEventListener("submit", search);
+    clearButton.addEventListener("click", clear);
 }
 
+function clear(){
+    searchInput.value="";
+    Array.from(imageListWrapper.children).forEach((child)=>child.remove());
+}
 
 function search(e) {
     const value = searchInput.value.trim();
